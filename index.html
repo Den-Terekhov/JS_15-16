@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+  <script src="js/template.js"></script>
+  <script src="js/script.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <form>
+    <input id="query" type="text">
+    <input id="search" type="submit" value="Поиск в Google">
+  </form>
+
+  <div class="search_results">
+  </div>
+
+  <script type="text/html" id="myTemplate">
+    <% for(var i = 0; i < data.length; i++) { %>
+      <div class="result">
+        <a class="search_title" href="<%= data[i].link %>" target="blank"><%= data[i].htmlTitle %> </a>
+        <div class="search_link"><%= data[i].htmlFormattedUrl %></div>
+        <div class="search_text"><%= data[i].htmlSnippet %></div>
+      </div>
+    <% } %>
+  </script>
+  
+</body>
+</html>
